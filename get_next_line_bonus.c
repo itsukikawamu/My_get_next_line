@@ -6,7 +6,7 @@
 /*   By: ikawamuk <ikawamuk@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 13:55:14 by ikawamuk          #+#    #+#             */
-/*   Updated: 2025/05/22 23:57:34 by ikawamuk         ###   ########.fr       */
+/*   Updated: 2025/05/25 15:26:38 by ikawamuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*get_next_line(int fd)
 	t_list			*node_ptr;
 	static t_list	*table[HASH_SIZE];
 
-	if (fd < 0 || BUFFER_SIZE > SIZE_MAX / 2)
+	if (fd < 0 || BUFFER_SIZE > SIZE_MAX / 2 || BUFFER_SIZE == 0)
 		return (NULL);
 	node_ptr = alloc_fd_node(fd, table);
 	if (!node_ptr)
